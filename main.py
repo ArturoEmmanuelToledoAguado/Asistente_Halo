@@ -1,3 +1,13 @@
+'''
+pip install SpeechRecognition
+pip install pyttsx3
+pip install PyAudio si marca error teclear en la consola:
+    python --version; ver la version que tenemos instalad
+    python; observar si dice 64 bit (AMD64) o 32 bit (Intel)
+    https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio ; buscar un cp cpn la versión (cp38-win32 en mi caso)
+pip install matplotlib
+'''
+import listen as listen
 import speech_recognition as sr#Reconoce la voz
 import pyttsx3
 import matplotlib.pyplot as plt
@@ -21,19 +31,23 @@ def talk(text):
 
 #Escucha
 def listen():
+    flag = 1
     try:
         with sr.Microphone() as source:#Usamos el microfono como fuente
             print("Escuchando...")
             voice = listener.listen(source)#Escucha
-            rec = listener.recognize_google(voice)#Pasa a texto lo escuchado
+            rec = listener.recognize_google(voice, language = 'es-ES')#Pasa a texto lo escuchado
             rec = rec.lower()
             if name in rec:
                 print(rec)
+                flag = run(rec)
+            else:
+                talk("Intentalo de nuevo")
     except:
         pass
-    return rec
+    return flag
 
-def run():
+def run(rec):
     rec = listen()
     if ('que es' in rec) or ('halo' in rec):
         talk('En el mundo real, Halo es el nombre de un videojuego creado por la empresa BUNGIE estudios y estrenado el '
@@ -167,4 +181,13 @@ def run():
     if ('libros' in rec) or ('novelas' in rec):
         talk('Hasta el momento son 30 Libros.')
 
-run()
+    elif 'adios' in rec or 'salir' in rec:
+        flag = 0
+        talk('Saliendo ...')
+
+    else:
+        talk("Intentalo de nuevo")
+    return flag
+
+while flag:
+    flag = listen()
