@@ -1,5 +1,7 @@
 import speech_recognition as sr#Reconoce la voz
 import pyttsx3
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
 name = 'max'
 listener = sr.Recognizer()
@@ -62,5 +64,29 @@ def run():
              'responsabilidad, así que decidieron eliminar a la raza forerunner y ceder el manto a otras especies que '
              'consideran dignas; cuando los Forerunners se enteraron de los planes de sus creadores decidieron '
              'atacarlos con una avanzada militar de proporciones nunca antes vistas')
+
+    if ('manto' in rec) or ('responsabilidad' in rec) or ('responsability' in rec):
+        talk('Filosofía de los precursores basada en la creencia de que la forma de vida consciente más avanzada debería'
+             ' proteger a la galaxia y todos sus seres vivientes en la galaxia.')
+
+    if ('lucien' in rec) and ('for runners' in rec):
+        img = mpimg.imread('Frun.png')
+        imgplot = plt.imshow(img)
+        plt.show()
+        talk('Los Forerunners estaban clasificados en cinco niveles: Minero: Expertos en las ingenierías planetarias y '
+             'estelares, responsables de reunir recursos para los proyectos de construcción; '
+             'Trabajador de vida: No tenían comparación en cuanto a sus conocimientos sobre biología y medicina, por lo '
+             'que cuidaban e incluso creaban formas de vida. '
+             'Guerrero-Sirviente: Rango que constituía el ancho de la milicia de los Forerunners; operaban las '
+             'magníficas naves de batalla y máquinas de guerra.'
+             'Prometeos: Eran la forma más elevada y evolucionada del rango Guerrero-Sirviente; considerados '
+             'combatientes Forerruner de élite. '
+             'Constructor: Eran el grado más alto dentro de la sociedad Forerunner, encargados de construir naves, '
+             'armas y las megaestructuras')
+
+    if ('muestrame' in rec) and ('lucien' in rec) or ('muscle' in rec):
+        img = mpimg.imread('Pre.jpg')
+        imgplot = plt.imshow(img)
+        plt.show()
 
 run()
