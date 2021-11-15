@@ -88,5 +88,83 @@ def run():
         img = mpimg.imread('Pre.jpg')
         imgplot = plt.imshow(img)
         plt.show()
+        #Provar 2.3
+    if ('amenaza' in rec) and ('flood' in rec):
+        talk('Los primeros registros de Flood datan de cuando los humanos y los San´Shyuum (profetas) comenzaron a '
+             'experimentar con mutaciones provocadas por un misterioso polvo desecado que encontraron en una nave que '
+             'se estrelló en los límites de la galaxia; el Flood pronto evolucionó hasta convertirse en un poderoso e '
+             'intrincado sistema de formas grotescas virtualmente imposibles de detener.')
+
+    if ('esparcer' in rec) or ('flood' in rec):
+        talk('El Flood era un diseño malicioso: nació en forma de esporas virulentas, aunque de apariencia inofensiva. '
+             'Poco a poco, las esporas comenzaron a atacar a las especies conscientes apoderándose de sus mentes y '
+             'cuerpos, transformándolos en criaturas espantosamente mal formadas, capaces de infectar a otros de manera '
+             'directa.')
+
+    if ('son' in rec) and ('profetas' in rec):
+        talk('Los San´Shyuum, también conocidos coloquialmente como Profetas, fueron los principales arquitectos del '
+             'Covenant. Por milenios, los San´Shyuum adoraron a los Forerunner como dioses, y la base de su devoción '
+             'giraba en torno a su erróneo concepto de trascendencia que estaba conectado con la Matriz de Halo. Como '
+             'líderes religiosos del Covenant, la actividad principal de los Profetas era localizar, estudiar e '
+             'incorporar tecnología Forerunner para estudiarla y eventualmente iniciar el Gran Viaje')
+
+    if ('muestrame' in rec) and ('lucien' in rec) or ('profetas' in rec):
+        img = mpimg.imread('Pro.jpg')
+        imgplot = plt.imshow(img)
+        plt.show()
+
+    if ('muestrame' in rec) and ('espora' in rec):
+        img = mpimg.imread('esp.jpg')
+        imgplot = plt.imshow(img)
+        plt.show()
+
+    if ('muestrame' in rec) and ('humano' in rec):
+        img = mpimg.imread('hum.jpg')
+        imgplot = plt.imshow(img)
+        plt.show()
+
+    if ('partes' in rec) and ('historia' in rec) or ('history' in rec):
+        talk('La mayoría de mis registros son de las siguientes periodos: El legado forerunner, Ascenso de la humanidad,'
+             ' Fin de la guerra, Secuelas, Regreso de los prometeos')
+
+    if ('legado' in rec) and ('for runner' in rec):
+        talk('Periodo de tiempo que data desde el año 10,000,000 Antes de la Era Común al año 852 de la Era Común')
+
+    if ('ascenso' in rec) and ('humanidad' in rec):
+        talk('Periodo de tiempo que data desde el año 2080  de la Era Común al 2552 de la Era Común')
+
+    if ('fin' in rec) or ('guerra' in rec):
+        talk('Periodo de tiempo que data del año 2552  de la Era Común')
+
+    if ('secuelas' in rec) or ('second' in rec):
+        talk('Periodo de tiempo que data desde el año 2553  de la Era Común al 2556 de la Era Común')
+
+    if ('regreso' in rec):
+        talk('Periodo de tiempo que data desde el año 2557  de la Era Común al 2558 de la Era Común')
+#3
+    if ('creador' in rec) and ('intelectual' in rec):
+        talk('Las personas a cargo de la primer entrega fueron Marcus R.Lehto que fue el director de arte creativo y '
+             'Joseph Staten que fue el director y escritor.')
+#4
+    if ('entregas' in rec):
+        talk('La fraquincia ha generado hasta ahorita 17 juegos y se esperan mas en un futuro.')
+
+    if ('mas vendido' in rec):
+        talk('El juego mas vendido de la franquicia fue Halo 5:Guardians')
+
+    if ('menos vendido' in rec):
+        talk('El juego menos vendido de la franquicia fue Halo: Fireteam Raven')
+
+    if ('mas odiado' in rec):
+        talk('El juego mas odiado fue Halo 5: Forge')
+
+    if ('mejores criticas' in rec):
+        talk('El juego con mejores reseñas es el Halo 3: ODST')
+
+    if ('mas tiempo' in rec):
+        talk('El juego mas largo en desarrollar es Halo Infinite')
+#5
+    if ('libros' in rec) or ('novelas' in rec):
+        talk('Hasta el momento son 30 Libros.')
 
 run()
