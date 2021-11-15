@@ -7,13 +7,14 @@ pip install PyAudio si marca error teclear en la consola:
     https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio ; buscar un cp cpn la versión (cp38-win32 en mi caso)
 pip install matplotlib
 '''
-import listen as listen
+#import listen as listen
 import speech_recognition as sr#Reconoce la voz
 import pyttsx3
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 name = 'max'
+flag = 1
 listener = sr.Recognizer()
 engine = pyttsx3.init()#Hablar
 
@@ -48,7 +49,6 @@ def listen():
     return flag
 
 def run(rec):
-    rec = listen()
     if ('que es' in rec) or ('halo' in rec):
         talk('En el mundo real, Halo es el nombre de un videojuego creado por la empresa BUNGIE estudios y estrenado el '
              '15 de noviembre del 2001 con la primer entrega de la franquicia llamada Halo: Combat Evolved; En el Lore '
@@ -69,11 +69,11 @@ def run(rec):
              'sirvieron fielmente como mayordomos de toda la vida en la galaxia, aunque su ambición ocasionalmente '
              'excedió su juicio.')
 
-    if ('que son' in rec) or ('precursores' in rec):
+    if ('que son' in rec) and ('precursores' in rec):
         talk('Es la primer civilizacion de la que se tienen registros en la vía láctea, creadores de otras razas '
              'conscientes')
 
-    if ('como desaparecieron' in rec) or ('como desaparecer' in rec):
+    if ('cómo desaparecieron' in rec) or ('cómo desaparecer' in rec) or ('desaparecieron' in rec):
         talk('Los precursores no aprobaban la descarada forma en que los Forerunners se adjudicaron el manto de '
              'responsabilidad, así que decidieron eliminar a la raza forerunner y ceder el manto a otras especies que '
              'consideran dignas; cuando los Forerunners se enteraron de los planes de sus creadores decidieron '
@@ -83,7 +83,7 @@ def run(rec):
         talk('Filosofía de los precursores basada en la creencia de que la forma de vida consciente más avanzada debería'
              ' proteger a la galaxia y todos sus seres vivientes en la galaxia.')
 
-    if ('lucien' in rec) and ('for runners' in rec):
+    if ('como lucían los' in rec) and (('for runners' in rec) or ('forerunners' in rec)):
         img = mpimg.imread('Frun.png')
         imgplot = plt.imshow(img)
         plt.show()
@@ -98,18 +98,18 @@ def run(rec):
              'Constructor: Eran el grado más alto dentro de la sociedad Forerunner, encargados de construir naves, '
              'armas y las megaestructuras')
 
-    if ('muestrame' in rec) and ('lucien' in rec) or ('muscle' in rec):
+    if ('muéstrame un precursor' in rec) or ('cómo lucián los precursores' in rec) or ('como lucían los precursores' in rec):
         img = mpimg.imread('Pre.jpg')
         imgplot = plt.imshow(img)
         plt.show()
         #Provar 2.3
-    if ('amenaza' in rec) and ('flood' in rec):
+    if ('amenaza' in rec) and (('flood' in rec) or ('flor' in rec) or ('flot' in rec)):
         talk('Los primeros registros de Flood datan de cuando los humanos y los San´Shyuum (profetas) comenzaron a '
              'experimentar con mutaciones provocadas por un misterioso polvo desecado que encontraron en una nave que '
              'se estrelló en los límites de la galaxia; el Flood pronto evolucionó hasta convertirse en un poderoso e '
              'intrincado sistema de formas grotescas virtualmente imposibles de detener.')
 
-    if ('esparcer' in rec) or ('flood' in rec):
+    if ('como se propaga el flot' in rec) or ('cómo se propaga el flot' in rec):
         talk('El Flood era un diseño malicioso: nació en forma de esporas virulentas, aunque de apariencia inofensiva. '
              'Poco a poco, las esporas comenzaron a atacar a las especies conscientes apoderándose de sus mentes y '
              'cuerpos, transformándolos en criaturas espantosamente mal formadas, capaces de infectar a otros de manera '
@@ -122,17 +122,17 @@ def run(rec):
              'líderes religiosos del Covenant, la actividad principal de los Profetas era localizar, estudiar e '
              'incorporar tecnología Forerunner para estudiarla y eventualmente iniciar el Gran Viaje')
 
-    if ('muestrame' in rec) and ('lucien' in rec) or ('profetas' in rec):
+    if ('muestrame' in rec) and ('lucián' in rec) or ('profetas' in rec):
         img = mpimg.imread('Pro.jpg')
         imgplot = plt.imshow(img)
         plt.show()
 
-    if ('muestrame' in rec) and ('espora' in rec):
+    if ('espora' in rec) or ('múestrame una espora' in rec):
         img = mpimg.imread('esp.jpg')
         imgplot = plt.imshow(img)
         plt.show()
 
-    if ('muestrame' in rec) and ('humano' in rec):
+    if ('humano' in rec) or ('múestrame un humano' in rec):
         img = mpimg.imread('hum.jpg')
         imgplot = plt.imshow(img)
         plt.show()
@@ -141,7 +141,7 @@ def run(rec):
         talk('La mayoría de mis registros son de las siguientes periodos: El legado forerunner, Ascenso de la humanidad,'
              ' Fin de la guerra, Secuelas, Regreso de los prometeos')
 
-    if ('legado' in rec) and ('for runner' in rec):
+    if ('legado' in rec) or (('for runner' in rec) or ('ford' in rec)):
         talk('Periodo de tiempo que data desde el año 10,000,000 Antes de la Era Común al año 852 de la Era Común')
 
     if ('ascenso' in rec) and ('humanidad' in rec):
@@ -163,19 +163,19 @@ def run(rec):
     if ('entregas' in rec):
         talk('La fraquincia ha generado hasta ahorita 17 juegos y se esperan mas en un futuro.')
 
-    if ('mas vendido' in rec):
+    if ('más vendido' in rec):
         talk('El juego mas vendido de la franquicia fue Halo 5:Guardians')
 
     if ('menos vendido' in rec):
         talk('El juego menos vendido de la franquicia fue Halo: Fireteam Raven')
 
-    if ('mas odiado' in rec):
+    if ('más odiado' in rec):
         talk('El juego mas odiado fue Halo 5: Forge')
 
-    if ('mejores criticas' in rec):
+    if ('mejores críticas' in rec):
         talk('El juego con mejores reseñas es el Halo 3: ODST')
 
-    if ('mas tiempo' in rec):
+    if ('más tiempo' in rec):
         talk('El juego mas largo en desarrollar es Halo Infinite')
 #5
     if ('libros' in rec) or ('novelas' in rec):
